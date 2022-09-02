@@ -2,7 +2,8 @@
   <div id="content" class="app-apptest">
 		<AppContent>
       <div id="app">
-        <img src="./assets/logo.png">
+        <Banner />
+        <!--<img src="./assets/logo.png">
         <h1>{{ msg }}</h1>
         <h2>Essential Links</h2>
         <ul> 
@@ -17,7 +18,7 @@
           <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
           <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
           <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-        </ul>
+        </ul>-->
       </div>
     </AppContent>
 	</div>
@@ -25,11 +26,13 @@
 
 <script>
 import AppContent from '@nextcloud/vue/dist/Components/AppContent'
+import Banner from './components/banner.vue'
 
 export default {
   name: 'app',
   components: {
 		AppContent,
+    Banner
 	},
   data () {
     return {
@@ -44,7 +47,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
