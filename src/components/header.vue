@@ -40,7 +40,7 @@
         position: absolute;
         height: 31px;
         left: 0%;
-        right: 89.76%;
+        right: 90.7%;
         top: calc(50% - 31px/2 + 2px);
 
         background: url(../assets/logo.png);
