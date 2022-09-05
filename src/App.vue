@@ -5,6 +5,7 @@
         <Header />
         <Banner />
         <Document />
+        <NewDays />
       </div>
     </AppContent>
 	</div>
@@ -15,6 +16,7 @@ import AppContent from '@nextcloud/vue/dist/Components/AppContent'
 import Header from './components/header.vue'
 import Banner from './components/banner.vue'
 import Document from './components/document.vue'
+import NewDays from './components/new-days.vue'
 
 export default {
   name: 'app',
@@ -22,7 +24,8 @@ export default {
 		AppContent,
     Header,
     Banner,
-    Document
+    Document,
+    NewDays
 	},
   data () {
     return {
