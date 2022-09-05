@@ -39,7 +39,7 @@
         position: absolute;
         height: 208px;
         left: 2.01%;
-        right: 83.54%;
+        right: 84.8%;
         top: -152px;
 
         background: url(../assets/point.png);
@@ -120,7 +120,7 @@
         position: absolute;
         height: 753px;
         left: 0%;
-        right: 6.3%;
+        right: 17%;
         top: 56px;
 
         background: url(../assets/build.png);
@@ -132,7 +132,7 @@
         position: absolute;
         height: 208px;
         left: -8.82%;
-        right: 76.06%;
+        right: 80.9%;
         top: 657px;
 
         background: url(../assets/point.png);
