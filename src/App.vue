@@ -7,6 +7,7 @@
         <Document />
         <NewDays />
         <News />
+        <Personnel />
       </div>
     </AppContent>
 	</div>
@@ -19,6 +20,7 @@ import Banner from './components/banner.vue'
 import Document from './components/document.vue'
 import NewDays from './components/new-days.vue'
 import News from './components/news.vue'
+import Personnel from './components/personnel.vue'
 
 export default {
   name: 'app',
@@ -28,7 +30,8 @@ export default {
     Banner,
     Document,
     NewDays,
-    News
+    News,
+    Personnel
 	},
   data () {
     return {
