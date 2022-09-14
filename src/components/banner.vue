@@ -2,17 +2,10 @@
     <div class="banner">
         <div class="banner__point_up"></div>
         <div class="container">
-            <p class="banner__name">Corporate Legal Representation</p>
+            <p class="banner__name">{{ banner.name }}</p>
         </div>
         <div class="container">
-            <p class="banner__description">
-                We understand the difficulties and stress that your legal issues bring. 
-                Our team is committed to providing you with the individual attention, 
-                communication, and dedication you deserve.
-            </p>
-        </div>
-        <div class="container">
-            <button class="banner__button">Request Consultation</button>
+            <p class="banner__description">{{ banner.description }}</p>
         </div>
         <div class="frame">
             <div class="banner__point_down"></div>
@@ -22,13 +15,28 @@
     </div>
 </template>
 
+<script>
+export default {
+    name: 'Banner',
+    data () {
+        return {
+            banner: {
+                name: 'Подразделение внутреннего контроля и аудита',
+                description: 'Внутренний контроль - это действия направленные на получение уверенности в достижении целей. Система внутреннего контроля - это совокупность действий работников и организационных мер, направленных на достижение стратегических целей, соблюдение законов и ЛНА, обеспечение достоверности информации. Каждый работник часть системы ВК.'
+            }
+        }
+    }
+}
+
+</script>
+
 <style scoped>
     .banner {
         position: absolute;
         height: 753px;
         left: 0%;
         right: 0%;
-        top: 0px;
+        top: 49px;
 
         background: #E4ECF0;
         border-radius: 0px;
@@ -57,9 +65,9 @@
     .banner__name {
         position: absolute;
         height: 135px;
-        left: 6.3%;
+        left: 0%;
         right: 31.65%;
-        top: calc(40% - 135px/2 - 154px);
+        top: calc(-50% - 135px/2 - 154px);
 
         font-family: 'DM Serif Text';
         font-style: normal;
@@ -73,9 +81,9 @@
     .banner__description {
         position: absolute;
         height: 135px;
-        left: 6.3%;
+        left: 0%;
         right: 31.65%;
-        top: calc(60% - 168px/2 + 22.5px);
+        top: calc(40% - 168px/2 + 22.5px);
 
         font-family: 'DM Sans';
         font-style: normal;
@@ -85,27 +93,6 @@
 
         color: #00486D;
     }
-
-    .banner__button {
-        position: absolute;
-        height: 45px;
-        left: 6.3%;
-        right: 31.65%;
-        top: calc(220% - 168px/2 + 22.5px);
-        
-        appearance: none;
-        border: 0;
-        border-radius: 5px;
-        background: #00486D;
-        color: #fff;
-        padding: 8px 16px;
-        font-size: 16px;
-        font-family: 'DM Serif Text';
-    }
-
-    .banner__button:hover {
-	    background-color: #1976d2;
-	}
 
     .frame {
         position: absolute;
