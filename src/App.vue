@@ -6,7 +6,9 @@
         <div class="header">
             <div class="header__rectangle"></div>
             <div class="container">
-                <div class="header__logo"></div>
+                <div class="header__logo">
+                  <div class="logo"></div>
+                </div>
                 <div class="menu">
                     <div class="menu_about">
                         <a @click="scrollTo('banner')" class="menu__about_description">{{ menu.about }}</a>
@@ -107,8 +109,17 @@ export default {
     right: 90.7%;
     top: calc(50% - 31px/2 + 2px);
 
-    background: url(./assets/logo.png);
     border-radius: 0px;
+  }
+
+  .logo {
+    position: absolute;
+    left: 0.52%;
+    right: 16.2%;
+    top: 1.45%;
+    bottom: 0%;
+
+    background: url(./assets/logo.png);
   }
 
   .menu {
