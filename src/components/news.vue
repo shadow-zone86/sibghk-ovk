@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="news">
         <div class="button__arrow_left"></div>
         <div class="container__news">
             <p class="news__description">
@@ -12,7 +12,7 @@
 </template>
 
 <style scoped>
-    .container {
+    .news {
         position: absolute;
         height: 620px;
         left: 5.9%;

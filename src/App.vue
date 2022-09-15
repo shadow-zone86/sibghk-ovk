@@ -2,18 +2,18 @@
   <div id="content" class="app-apptest">
 		<AppContent>
       <div id="app">
-        <ZeroBlock />
-        <div class="header">
-            <div class="header__rectangle"></div>
-            <div class="container">
-                <div class="header__logo">
-                  <div class="logo"></div>
+        <ZeroBlock ref="zero-block" />
+        <div class="wrap-header">
+          <div class="header__rectangle"></div>
+          <div class="header__container">
+            <div class="header__logo">
+              <div class="logo"></div>
+            </div>
+            <div class="menu">
+              <div class="menu_about">
+                <a @click="scrollTo('banner')" class="menu__about_description">{{ menu.about }}</a>
                 </div>
-                <div class="menu">
-                    <div class="menu_about">
-                        <a @click="scrollTo('banner')" class="menu__about_description">{{ menu.about }}</a>
-                    </div>
-                </div>
+              </div>
             </div>
         </div>
         <Banner ref="banner" />
@@ -74,7 +74,7 @@ export default {
     margin-top: 60px;
   }
 
-  .header {
+  .wrap-header {
     position: absolute;
     height: 108px;
     left: 0%;
@@ -94,7 +94,7 @@ export default {
     border-radius: 0px;
   }
 
-  .container {
+  .header__container {
     position: absolute;
     height: 62px;
     left: 5.9%;
