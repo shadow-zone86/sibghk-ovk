@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="news-day">
         <div class="picture"></div>
         <div class="rectangle"></div>
         <div class="block">
@@ -20,7 +20,7 @@
 </template>
 
 <style scoped>
-    .container {
+    .news-day {
         position: absolute;
         height: 680.2px;
         left: 5.9%;

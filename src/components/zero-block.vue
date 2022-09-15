@@ -1,11 +1,11 @@
 <template>
-    <div class="header">
-        <div class="header__rectangle"></div>
+    <div class="zero-block">
+        <div class="zero-block__rectangle"></div>
     </div>
 </template>
 
 <style scoped>
-    .header {
+    .zero-block {
         position: absolute;
         height: 108px;
         left: 0%;
@@ -14,7 +14,7 @@
         z-index: 1;
     }
 
-    .header__rectangle {
+    .zero-block__rectangle {
         position: absolute;
         height: 62px;
         left: 0%;

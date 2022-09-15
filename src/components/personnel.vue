@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="personnel">
         <div class="container__rectangle"></div>
         <div class="block">
             <p class="block__text">Recent Articles</p>
@@ -49,7 +49,7 @@
 </template>
 
 <style scoped>
-    .container {
+    .personnel {
         position: absolute;
         height: 938px;
         left: 0%;
