@@ -47,7 +47,7 @@ export default {
         position: absolute;
         height: 208px;
         left: 2.01%;
-        right: 84.8%;
+        right: 87.8%;
         top: -152px;
 
         background: url(../assets/point.png);
@@ -107,7 +107,7 @@ export default {
         position: absolute;
         height: 753px;
         left: 0%;
-        right: 17%;
+        right: 27%;
         top: 56px;
 
         background: url(../assets/build.png);
@@ -119,7 +119,7 @@ export default {
         position: absolute;
         height: 208px;
         left: -8.82%;
-        right: 80.9%;
+        right: 87.9%;
         top: 657px;
 
         background: url(../assets/point.png);
