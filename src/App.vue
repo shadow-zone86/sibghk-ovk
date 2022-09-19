@@ -12,9 +12,26 @@
             <div class="menu">
               <div class="menu_about">
                 <a @click="scrollTo('banner')" class="menu__about_description">{{ menu.about }}</a>
-                </div>
+              </div>
+              <div class="menu_document">
+                <a @click="scrollTo('document')" class="menu__document_description">{{ menu.document }}</a>
+              </div>
+              <div class="menu_newdays">
+                <a @click="scrollTo('new-days')" class="menu__newdays_description">{{ menu.newdays }}</a>
+              </div>
+              <div class="menu_news">
+                <a @click="scrollTo('news')" class="menu__news_description">{{ menu.news }}</a>
+              </div>
+              <div class="menu_personnel">
+                <a @click="scrollTo('personnel')" class="menu__personnel_description">{{ menu.personnel }}</a>
               </div>
             </div>
+            <div class="block__feedback">
+              <div class="feedback__button">
+                <button class="button__blue">{{ button }}</button>
+              </div>
+            </div>
+          </div>
         </div>
         <Banner ref="banner" />
         <Document ref="document" />
@@ -49,8 +66,13 @@ export default {
   data () {
     return {
       menu: {
-        about: 'О нас'
-      }
+        about: 'О нас',
+        document: 'Документы',
+        newdays: 'Новость дня',
+        news: 'Новости',
+        personnel: 'Сотрудники'
+      },
+      button: 'Получи консультацию'
     }
   },
   methods: {
@@ -159,4 +181,166 @@ export default {
     cursor: pointer;
     text-decoration: underline;
   }
+
+  .menu_document {
+    position: absolute;
+    height: 45px;
+    left: 26.85%;
+    right: 59.11%;
+    top: 0px;
+  }
+
+  .menu__document_description {
+    position: absolute;
+    height: 35px;
+    left: 0%;
+    right: 0%;
+    top: 0px;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+
+    color: #00486D;
+
+    text-decoration: none;
+  }
+
+  .menu__document_description:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .menu_newdays {
+    position: absolute;
+    height: 45px;
+    left: 66.77%;
+    right: 10%;
+    top: 0px;
+  }
+
+  .menu__newdays_description {
+    position: absolute;
+    height: 35px;
+    left: 0%;
+    right: 0%;
+    top: 0px;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 35px;
+
+    color: #00486D;
+
+    text-decoration: none;
+  }
+
+  .menu__newdays_description:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .menu_news {
+    position: absolute;
+    height: 45px;
+    left: 106.7%;
+    right: 7.88%;
+    top: 0px;
+  }
+
+  .menu__news_description {
+    position: absolute;
+    height: 35px;
+    left: 0%;
+    right: 0%;
+    top: 0px;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 35px;
+
+    color: #00486D;
+
+    text-decoration: none;
+  }
+
+  .menu__news_description:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .menu_personnel {
+    position: absolute;
+    height: 45px;
+    left: 140.7%;
+    right: 7.88%;
+    top: 0px;
+  }
+
+  .menu__personnel_description {
+    position: absolute;
+    height: 35px;
+    left: 0%;
+    right: 0%;
+    top: 0px;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 35px;
+
+    color: #00486D;
+
+    text-decoration: none;
+  }
+
+  .menu__personnel_description:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .block__feedback {
+    position: absolute;
+    height: 59px;
+    left: 68.9%;
+    right: 0%;
+    top: calc(50% - 59px/2);
+  }
+
+  .feedback__button {
+    position: absolute;
+    height: 59px;
+    left: 56.8%;
+    right: 0%;
+    top: calc(50% - 59px/2);
+  }
+
+  .button__blue {
+    position: absolute;
+    height: 39px;
+    left: 0%;
+    right: 0%;
+    top: 13px;
+        
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    color: #F2F6F7;
+    background: #00486D;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: 'DM Serif Text';
+  }
+
+  .button__blue:hover {
+    cursor: pointer;
+	  background-color: #1976d2;
+	}
 </style>
