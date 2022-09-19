@@ -40,9 +40,9 @@
 
     .rectangle {
         position: absolute;
-        width: 378px;
+        width: 413px;
         height: 680.2px;
-        right: -250px;
+        right: -2px;
         bottom: 0px;
 
         background: #F2F6F7;
@@ -137,13 +137,14 @@
     }
 
     .button:hover {
+        cursor: pointer;
 	    background-color: #1976d2;
 	}
 
     .picture_point {
         position: absolute;
         height: 185px;
-        left: 87.1%;
+        left: 87.7%;
         right: 0%;
         top: 98.8px;
 

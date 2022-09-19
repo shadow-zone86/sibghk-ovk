@@ -134,7 +134,7 @@
         position: absolute;
         height: 64px;
         left: 8.31%;
-        right: 77%;
+        right: 80%;
         top: 41px;
 
         background: url(../assets/www.png);
@@ -224,7 +224,7 @@
         position: absolute;
         height: 64px;
         left: 8.31%;
-        right: 80.5%;
+        right: 82.3%;
         top: 41px;
 
         background: url(../assets/vector.png);
@@ -314,7 +314,7 @@
         position: absolute;
         height: 48px;
         left: 8.31%;
-        right: 77%;
+        right: 79.5%;
         top: 41px;
 
         background: url(../assets/book.png);
