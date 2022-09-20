@@ -2,15 +2,27 @@
     <div class="news">
         <div class="button__arrow_left" @click="down()"></div>
         <div class="container__news">
-            <p class="news__description"> {{ newsDescription }} </p>
+            <p class="news__description" @click="showModal = true">{{ newsDescription }}</p>
         </div>
         <div class="button__arrow_right" @click="next()"></div>
+		<NcModal
+			v-if="showModal"
+			@close="showModal = false"
+			size="normal"
+            dark>
+			<div style="background-color: azure">{{ news[key].description }}</div>
+		</NcModal>
     </div>
 </template>
 
 <script>
+import NcModal from '@nextcloud/vue/dist/Components/Modal'
+
 export default {
     name: 'news',
+    components: {
+        NcModal
+    },
     data () {
         return {
             news: {
@@ -29,7 +41,8 @@ export default {
             },
             newsDescription: '',
             key: 0,
-            allNews: 0
+            allNews: 0,
+            showModal: false
         }
     },
     created () {
@@ -101,6 +114,11 @@ export default {
         text-align: center;
 
         color: #00486D;
+    }
+
+    .news__description:hover {
+        cursor: pointer;
+        color: black;
     }
 
     .button__arrow_left {
