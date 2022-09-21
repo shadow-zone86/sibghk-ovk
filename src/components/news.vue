@@ -1,16 +1,16 @@
 <template>
     <div class="news">
-        <div class="button__arrow_left" @click="down()"></div>
+        <div class="button__arrow_left" @click="showNews(0)"></div>
         <div class="container__news">
-            <p class="news__description" @click="showModal = true">{{ newsDescription }}</p>
+            <p class="news__description" @click="showModal = true">{{ $store.getters.getNewsDescription }}</p>
         </div>
-        <div class="button__arrow_right" @click="next()"></div>
+        <div class="button__arrow_right" @click="showNews(1)"></div>
 		<NcModal
 			v-if="showModal"
 			@close="showModal = false"
 			size="normal"
             dark>
-			<div style="background-color: azure">{{ news[key].description }}</div>
+            <div style="background-color: azure">{{ $store.getters.getNews[$store.getters.getKey].description }}</div>
 		</NcModal>
     </div>
 </template>
@@ -25,41 +25,20 @@ export default {
     },
     data () {
         return {
-            news: {
-                0: {
-                    header: 'The team at McKinley always delivers thoughtful and professional legal services in a timely manner.',
-                    description: 'GraphQL is a query language for your API, and a server side runtime for executing queries. A single endpoint can return data about multiple resources, which makes it a great fit for Vue.js single page applications. This article will go over how to build a GraphQL API from scratch, as well as define and implement queries and mutations with custom types. I will use Node.js for the GraphQL server, and make requests and display the results using a Vue.js single page application.'
-                },
-                1: {
-                    header: 'GraphQL basics and practical examples with Vue.',
-                    description: 'Vue is a modern JavaScript framework for building single-page applications. Apollo Client is a fully-fledged GraphQL client and state management library. Using Vue Apollo, we can combine them to substantially improve the developer experience involved in building complex UIs. In this article, we’ll learn how to get started building with Vue, GraphQL, and Apollo Client using the latest versions of Apollo Client and Vue Apollo.'
-                },
-                2: {
-                    header: 'Nextcloud trial',
-                    description: 'Get a feeling for the collaboration platform that helps thousands of modern organizations to secure data and to collaborate across divisions and over company borders. With our trial you will get access to our core applications – Nextcloud Files, Nextcloud Talk, Nextcloud Groupware, and Nextcloud Office. Take some time to explore our user interface and see how Nextcloud can help you to accomplish your tasks! We will follow up with information to guide you on your journey to explore Nextcloud. Note: Your account is valid for 60 minutes.'
-                }
-            },
-            newsDescription: '',
-            key: 0,
-            allNews: 0,
             showModal: false
         }
     },
     created () {
         this.description()
-        this.allNews = (Object.keys(this.news).length) - 1
+        this.$store.dispatch('actionAllNews', 1)
     },
     methods: {
-        next() {
-            (this.key < this.allNews) ? this.key++ : this.key=0
-            this.description()
-        },
-        down() {
-            (this.key > 0) ? this.key-- : this.key=this.allNews
+        showNews(click) {
+            this.$store.dispatch('actionKey', click)
             this.description()
         },
         description() {
-            this.newsDescription = this.news[this.key].header
+            this.$store.dispatch('actionDescription', this.$store.getters.getKey)
         }
     }
 }
