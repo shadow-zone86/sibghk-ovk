@@ -21,7 +21,71 @@ export default new Vuex.Store({
         },
         newsDescription: '',
         key: 0,
-        allNews: 0
+        allNews: 0,
+        headerDocumant: {
+            header: 'Документы',
+            description: 'Нормативно-правовые акты, устанавливающие статус, функции, права, обязанности и ответственность ОВК, а так же акты, которыми ОВК руководствуется в своей деятельности'
+        },
+        blockDocument: {
+            right: {
+                header: '',
+                description: 'Документы по деятельности ОВК'
+            },
+            center: {
+                header: '',
+                description: 'Документы по применению мер ответственности'
+            },
+            left: {
+                header: '',
+                description: 'Положение об ОВК'
+            }
+        },
+        learnMore: 'Подробнее',
+        allDocument: {
+            0: {
+                0: {
+                    name: 'ЕОМУ по ЭАМ',
+                    alt: '001'
+                },
+                1: {
+                    name: 'ЕОП проведения проверки',
+                    alt: '002'
+                },
+                2: {
+                    name: 'Порядок по ВА',
+                    alt: '003'
+                },
+                3: {
+                    name: 'Регламент планирования КМ и проведения проверок ОВК ГХК',
+                    alt: '004'
+                }
+            },
+            1: {
+                0: {
+                    name: 'Приказ ГК от 04.03.16 № 1-186-П  внесение изм в пр ГК меры воздейст исп дисц 1-534-П',
+                    alt: '005'
+                },
+                1: {
+                    name: 'Приказ ГК от 05.06.15 № 534-п об утверждении ЕОМР исп дисц',
+                    alt: '006'
+                },
+                2: {
+                    name: 'Приказ ГК от 25.01.17 № 1-52-П изм. ЕОМР и отмена 417-П',
+                    alt: '007'
+                },
+                3: {
+                    name: 'Приказ ГК от 29.07.16 № 1-696-П изм ЕОМР меры за исполн дисципд',
+                    alt: '008'
+                }
+            },
+            2: {
+                0: {
+                    name: '01-38.001-2018 Положение об ОВК',
+                    alt: '009'
+                }
+            }
+        },
+        documentActive: {}
     },
     mutations: {
         setNewsDescription(state, key) {
@@ -39,6 +103,9 @@ export default new Vuex.Store({
                     (state.key < state.allNews) ? state.key++ : state.key=0
                     break
             }
+        },
+        setDocumentActive(state, click) {
+            state.documentActive = state.allDocument[click]
         }
     },
     actions: {
@@ -50,6 +117,9 @@ export default new Vuex.Store({
         },
         actionKey(ctx, click) {
             ctx.commit('setKey', click)
+        },
+        actionDocumentActive(ctx, click) {
+            ctx.commit('setDocumentActive', click)
         }
     },
     getters: {
@@ -64,6 +134,18 @@ export default new Vuex.Store({
         },
         getAllNews(state) {
             return state.allNews
+        },
+        getHeaderDocument(state) {
+            return state.headerDocumant
+        },
+        getBlockDocument(state) {
+            return state.blockDocument
+        },
+        getLearnMore(state) {
+            return state.learnMore
+        },
+        getDocument(state) {
+            return state.documentActive
         }
     }
 })

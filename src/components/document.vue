@@ -1,54 +1,76 @@
 <template>
     <div class="document">
         <div class="container__description">
-            <p class="text__header">Areas of Practice</p>
-            <p class="text__description">
-                Our disciplined approach to resolving your 
-                legal issues will produce the best-possible 
-                outcome.
-            </p>
+            <p class="text__header">{{ $store.getters.getHeaderDocument.header }}</p>
+            <p class="text__description">{{ $store.getters.getHeaderDocument.description }}</p>
         </div>
-        <div class="container">
+        <div class="block">
             <div class="container__block_right">
                 <div class="container__rectangle_right"></div>
                 <div class="container__picture_right"></div>
-                <p class="container__header_right">Intellectual Property</p>
-                <p class="container__description_right">
-                    Intellectual Property law deals with laws to protect 
-                    creators and owners of inventions, writing, music, 
-                    designs and other works.
-                </p>
+                <p class="container__header_right">{{ $store.getters.getBlockDocument.right.header }}</p>
+                <p class="container__description_right">{{ $store.getters.getBlockDocument.right.description }}</p>
                 <div class="container__button_right">
-                    <p class="button__text_right">Learn More</p>
+                    <p class="button__text_right" @click="showDocument(0)">{{ $store.getters.getLearnMore }}</p>
                 </div>
             </div>
             <div class="container__block_center">
                 <div class="container__rectangle_center"></div>
                 <div class="container__picture_center"></div>
-                <p class="container__header_center">Real Estate</p>
-                <p class="container__description_center">
-                    Real estate law is a branch of civil law that covers 
-                    the right to possess, use, and enjoy land.
-                </p>
+                <p class="container__header_center">{{ $store.getters.getBlockDocument.center.header }}</p>
+                <p class="container__description_center">{{ $store.getters.getBlockDocument.center.description }}</p>
                 <div class="container__button_center">
-                    <p class="button__text_center">Learn More</p>
+                    <p class="button__text_center" @click="showDocument(1)">{{ $store.getters.getLearnMore }}</p>
                 </div>
             </div>
             <div class="container__block_left">
                 <div class="container__rectangle_left"></div>
                 <div class="container__picture_left"></div>
-                <p class="container__header_left">Tax Law</p>
-                <p class="container__description_left">
-                    Tax law cover income, corporate, excise, luxury, estate 
-                    and property taxes, to name a few.
-                </p>
+                <p class="container__header_left">{{ $store.getters.getBlockDocument.left.header }}</p>
+                <p class="container__description_left">{{ $store.getters.getBlockDocument.left.description }}</p>
             </div>
             <div class="container__button_left">
-                <p class="button__text_left">Learn More</p>
+                <p class="button__text_left" @click="showDocument(2)">{{ $store.getters.getLearnMore }}</p>
             </div>
         </div>
+		<NcModal
+			v-if="showModal"
+			@close="showModal = false"
+			size="normal"
+            dark>
+            <div style="background-color: azure">
+                <li v-for="(value, name, index) in $store.getters.getDocument" :key="index">
+                    <a @click="getDocument(value.alt)">{{ value.name }}</a>
+                </li>
+            </div>
+		</NcModal>
     </div>
 </template>
+
+<script>
+import NcModal from '@nextcloud/vue/dist/Components/Modal'
+
+export default {
+    name: 'document',
+    components: {
+        NcModal
+    },
+    data () {
+        return {
+            showModal: false
+        }
+    },
+    methods: {
+        showDocument(click) {
+            this.$store.dispatch('actionDocumentActive', click)
+            this.showModal = true
+        },
+        getDocument (name) {
+            window.open('src/static/document/' + name + '.pdf', '_blank')
+        }
+    }
+}
+</script>
 
 <style scoped>
     .document {
@@ -64,7 +86,7 @@
         height: 152px;
         left: 2.96%;
         right: 50%;
-        top: 0px;
+        top: -33px;
     }
 
     .text__header {
@@ -99,7 +121,7 @@
         color: #00486D;
     }
 
-    .container {
+    .block {
         position: absolute;
         height: 442px;
         left: 2.96%;
@@ -197,6 +219,11 @@
         color: #00486D;
     }
 
+    .button__text_right:hover {
+        cursor: pointer;
+        color: black;
+    }
+
     .container__block_center {
         position: absolute;
         height: 442px;
@@ -287,6 +314,11 @@
         color: #00486D;
     }
 
+    .button__text_center:hover {
+        cursor: pointer;
+        color: black;
+    }
+
     .container__block_left {
         position: absolute;
         height: 442px;
@@ -375,5 +407,20 @@
         line-height: 35px;
 
         color: #00486D;
+    }
+
+    .button__text_left:hover {
+        cursor: pointer;
+        color: black;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #00486D;
+        cursor: pointer;
     }
 </style>
