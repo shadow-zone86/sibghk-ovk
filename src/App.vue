@@ -16,8 +16,8 @@
               <div class="menu_document">
                 <a @click="scrollTo('document')" class="menu__document_description">{{ menu.document }}</a>
               </div>
-              <div class="menu_newdays">
-                <a @click="scrollTo('new-days')" class="menu__newdays_description">{{ menu.newdays }}</a>
+              <div class="menu_guide">
+                <a @click="scrollTo('guide')" class="menu__guide_description">{{ menu.guide }}</a>
               </div>
               <div class="menu_news">
                 <a @click="scrollTo('news')" class="menu__news_description">{{ menu.news }}</a>
@@ -28,16 +28,17 @@
             </div>
             <div class="block__feedback">
               <div class="feedback__button">
-                <button class="button__blue">{{ button }}</button>
+                <button class="button__blue">{{ $store.getters.getButton[2].name }}</button>
               </div>
             </div>
           </div>
         </div>
         <Banner ref="banner" />
         <Document ref="document" />
-        <NewDays ref="new-days" />
+        <Guide ref="guide" />
         <News ref="news" />
         <Personnel ref="personnel" />
+        <Footer ref="footer" />
       </div>
     </AppContent>
 	</div>
@@ -48,9 +49,10 @@ import AppContent from '@nextcloud/vue/dist/Components/AppContent'
 import ZeroBlock from './components/zero-block.vue'
 import Banner from './components/banner.vue'
 import Document from './components/document.vue'
-import NewDays from './components/new-days.vue'
+import Guide from './components/guide.vue'
 import News from './components/news.vue'
 import Personnel from './components/personnel.vue'
+import Footer from './components/footer.vue'
 
 export default {
   name: 'app',
@@ -59,20 +61,20 @@ export default {
     ZeroBlock,
     Banner,
     Document,
-    NewDays,
+    Guide,
     News,
-    Personnel
+    Personnel,
+    Footer
 	},
   data () {
     return {
       menu: {
         about: 'О нас',
         document: 'Документы',
-        newdays: 'Новость дня',
+        guide: 'Руководство',
         news: 'Новости',
         personnel: 'Сотрудники'
-      },
-      button: 'Получи консультацию'
+      }
     }
   },
   methods: {
@@ -213,7 +215,7 @@ export default {
     text-decoration: underline;
   }
 
-  .menu_newdays {
+  .menu_guide {
     position: absolute;
     height: 45px;
     left: 66.77%;
@@ -221,7 +223,7 @@ export default {
     top: 0px;
   }
 
-  .menu__newdays_description {
+  .menu__guide_description {
     position: absolute;
     height: 35px;
     left: 0%;
@@ -239,7 +241,7 @@ export default {
     text-decoration: none;
   }
 
-  .menu__newdays_description:hover {
+  .menu__guide_description:hover {
     cursor: pointer;
     text-decoration: underline;
   }
