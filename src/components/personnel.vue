@@ -2,18 +2,16 @@
     <div class="personnel">
         <div class="container__rectangle"></div>
         <div class="block">
-            <p class="block__text">Recent Articles</p>
-            <div class="block__container">
+            <p class="block__text">{{ $store.getters.getPersonnel }}</p>
+            <div class="block__container_up">
                 <div class="personnel_left">
                     <div class="personnel__rectangle_left"></div>
                     <div class="personnel__image_left"></div>
                     <div class="personnel__container_left">
-                        <p class="personnel__name_left">December 13, 2020</p>
-                        <p class="personnel__description_left">
-                            12 Things About Web Design Your Boss Wants To Know
-                        </p>
+                        <p class="personnel__name_left">{{ $store.getters.getPersonnelBlock[0].post }}</p>
+                        <p class="personnel__description_left">{{ $store.getters.getPersonnelBlock[0].name }}</p>
                         <div class="text__container_left">
-                            <p class="personnel__text_left">Learn More</p>
+                            <p class="personnel__text_left">{{ $store.getters.getButton[1].name }}</p>
                         </div>
                     </div>
                 </div>
@@ -21,12 +19,10 @@
                     <div class="personnel__rectangle_center"></div>
                     <div class="personnel__image_center"></div>
                     <div class="personnel__container_center">
-                        <p class="personnel__name_center">December 10, 2020</p>
-                        <p class="personnel__description_center">
-                            The History Of Web Design
-                        </p>
+                        <p class="personnel__name_center">{{ $store.getters.getPersonnelBlock[1].post }}</p>
+                        <p class="personnel__description_center">{{ $store.getters.getPersonnelBlock[1].name }}</p>
                         <div class="text__container_center">
-                            <p class="personnel__text_center">Learn More</p>
+                            <p class="personnel__text_center">{{ $store.getters.getButton[1].name }}</p>
                         </div>
                     </div>
                 </div>
@@ -34,12 +30,34 @@
                     <div class="personnel__rectangle_right"></div>
                     <div class="personnel__image_right"></div>
                     <div class="personnel__container_right">
-                        <p class="personnel__name_right">December 10, 2020</p>
-                        <p class="personnel__description_right">
-                            How to improve Web Design Process
-                        </p>
+                        <p class="personnel__name_right">{{ $store.getters.getPersonnelBlock[2].post }}</p>
+                        <p class="personnel__description_right">{{ $store.getters.getPersonnelBlock[2].name }}</p>
                         <div class="text__container_right">
-                            <p class="personnel__text_right">Learn More</p>
+                            <p class="personnel__text_right">{{ $store.getters.getButton[1].name }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block__container_down">
+                <div class="personnel_left">
+                    <div class="personnel__rectangle_left"></div>
+                    <div class="personnel__image_left-down"></div>
+                    <div class="personnel__container_left">
+                        <p class="personnel__name_left">{{ $store.getters.getPersonnelBlock[4].post }}</p>
+                        <p class="personnel__description_left">{{ $store.getters.getPersonnelBlock[4].name }}</p>
+                        <div class="text__container_left">
+                            <p class="personnel__text_left">{{ $store.getters.getButton[1].name }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="personnel_right">
+                    <div class="personnel__rectangle_right"></div>
+                    <div class="personnel__image_right-down"></div>
+                    <div class="personnel__container_right">
+                        <p class="personnel__name_right">{{ $store.getters.getPersonnelBlock[5].post }}</p>
+                        <p class="personnel__description_right">{{ $store.getters.getPersonnelBlock[5].name }}</p>
+                        <div class="text__container_right">
+                            <p class="personnel__text_right">{{ $store.getters.getButton[1].name }}</p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +99,7 @@
         height: 53px;
         left: 2.96%;
         right: 75.26%;
-        top: -5.2px;
+        top: -210px;
 
         font-family: 'DM Serif Text';
         font-style: normal;
@@ -92,7 +110,7 @@
         color: #00486D;
     }
 
-    .block__container {
+    .block__container_up {
         position: absolute;
         height: 510.47px;
         left: 2.96%;
@@ -114,7 +132,7 @@
         position: absolute;
         height: 510px;
         left: 0%;
-        right: 0%;
+        right: 14.1%;
         top: 0px;
 
         background: #FFFFFF;
@@ -125,13 +143,26 @@
 
     .personnel__image_left {
         position: absolute;
-        height: 260px;
-        left: 0.25%;
-        right: 0.25%;
-        top: 1px;
+        height:456px;
+        left: 0.2%;
+        right: 14.3%;
+        top: -191px;
 
-        background: url(../assets/room.png);
+        background: url(../assets/personnel/001.png);
         border-radius: 0px;
+        background-size: 450px 700px;
+    }
+
+    .personnel__image_left-down {
+        position: absolute;
+        height:456px;
+        left: 0.2%;
+        right: 14.3%;
+        top: -191px;
+
+        background: url(../assets/personnel/005.png);
+        border-radius: 0px;
+        background-size: 450px 700px;
     }
 
     .personnel__container_left {
@@ -212,7 +243,7 @@
         position: absolute;
         height: 510px;
         left: 0%;
-        right: 0%;
+        right: 14.1%;
         top: 0px;
 
         background: #FFFFFF;
@@ -223,13 +254,14 @@
 
     .personnel__image_center {
         position: absolute;
-        height: 260px;
-        left: 0.25%;
-        right: 0.25%;
-        top: 1px;
+        height: 456px;
+        left: 0.2%;
+        right: 14.3%;
+        top: -191px;
 
-        background: url(../assets/railway-station.png);
+        background: url(../assets/personnel/002.png);
         border-radius: 0px;
+        background-size: 450px 700px;
     }
 
     .personnel__container_center {
@@ -310,7 +342,7 @@
         position: absolute;
         height: 510px;
         left: 0%;
-        right: 0%;
+        right: 14.1%;
         top: 0px;
 
         background: #FFFFFF;
@@ -321,13 +353,26 @@
 
     .personnel__image_right {
         position: absolute;
-        height: 260px;
-        left: 0.25%;
-        right: 0.25%;
-        top: 1px;
+        height: 456px;
+        left: 0.2%;
+        right: 14.3%;
+        top: -191px;
 
-        background: url(../assets/table.png);
+        background: url(../assets/personnel/003.png);
         border-radius: 0px;
+        background-size: 450px 700px;
+    }
+
+    .personnel__image_right-down {
+        position: absolute;
+        height: 456px;
+        left: 0.2%;
+        right: 14.3%;
+        top: -191px;
+
+        background: url(../assets/personnel/006.png);
+        border-radius: 0px;
+        background-size: 450px 700px;
     }
 
     .personnel__container_right {
@@ -392,5 +437,28 @@
         line-height: 35px;
 
         color: #00486D;
+    }
+
+    .block__container_down {
+        position: absolute;
+        height: 510.47px;
+        left: 2.96%;
+        right: 2.96%;
+        top: 931px;
+    }
+
+    .personnel__text_right:hover {
+        cursor: pointer;
+        color: black;
+    }
+
+    .personnel__text_center:hover {
+        cursor: pointer;
+        color: black;
+    }
+
+    .personnel__text_left:hover {
+        cursor: pointer;
+        color: black;
     }
 </style>

@@ -7,17 +7,9 @@ export default new Vuex.Store({
     state: {
         news: {
             0: {
-                header: 'The team at McKinley always delivers thoughtful and professional legal services in a timely manner.',
-                description: 'GraphQL is a query language for your API, and a server side runtime for executing queries. A single endpoint can return data about multiple resources, which makes it a great fit for Vue.js single page applications. This article will go over how to build a GraphQL API from scratch, as well as define and implement queries and mutations with custom types. I will use Node.js for the GraphQL server, and make requests and display the results using a Vue.js single page application.'
+                header: 'На ГХК заработал дополнительный канал коммуникаций с сотрудниками отдела внутреннего контроля',
+                description: 'На Горно-химическом комбинате открыт дополнительный канал коммуникации для взаимодействия работников предприятия с отделом внутреннего контроля (ОВК). На канале можно найти нормативно-правовые акты, устанавливающие статус, функции, права, обязанности и ответственность ОВК, а также акты, которыми ОВК руководствуется в своей деятельности. С помощью канала можно узнать о сотрудниках отдела и напрямую обратиться за консультацией.'
             },
-            1: {
-                header: 'GraphQL basics and practical examples with Vue.',
-                description: 'Vue is a modern JavaScript framework for building single-page applications. Apollo Client is a fully-fledged GraphQL client and state management library. Using Vue Apollo, we can combine them to substantially improve the developer experience involved in building complex UIs. In this article, we’ll learn how to get started building with Vue, GraphQL, and Apollo Client using the latest versions of Apollo Client and Vue Apollo.'
-            },
-            2: {
-                header: 'Nextcloud trial',
-                description: 'Get a feeling for the collaboration platform that helps thousands of modern organizations to secure data and to collaborate across divisions and over company borders. With our trial you will get access to our core applications – Nextcloud Files, Nextcloud Talk, Nextcloud Groupware, and Nextcloud Office. Take some time to explore our user interface and see how Nextcloud can help you to accomplish your tasks! We will follow up with information to guide you on your journey to explore Nextcloud. Note: Your account is valid for 60 minutes.'
-            }
         },
         newsDescription: '',
         key: 0,
@@ -85,7 +77,46 @@ export default new Vuex.Store({
                 }
             }
         },
-        documentActive: {}
+        documentActive: {},
+        personnel: 'Сотрудники',
+        personnelBlock: {
+            0: {
+                name: 'Александрова Наталья Александровна',
+                post: 'Ведущий юрисконсульт'
+            },
+            1: {
+                name: 'Бехтгольд Марина Михайловна',
+                post: 'Бухгалтер-ревизор'
+            },
+            2: {
+                name: 'Дмитриев Михаил Сергеевич',
+                post: 'Начальник отдела'
+            },
+            3: {
+                name: 'Конев Павел Иванович',
+                post: 'Заместитель генерального директора предприятия по внутреннему контролю'
+            },
+            4: {
+                name: 'Протопопов Дмитрий Борисович',
+                post: 'Инженер'
+            },
+            5: {
+                name: 'Саломатова Елена Ивановна',
+                post: 'Специалист по закупкам'
+            },
+        },
+        button: {
+            0: {
+                name: 'Обратная связь'
+            },
+            1: {
+                name: 'Задай вопрос'
+            },
+            2: {
+                name: 'Получи консультацию'
+            }
+        },
+        footer: '© 2022 Отдел внутреннего контроля'
     },
     mutations: {
         setNewsDescription(state, key) {
@@ -146,6 +177,18 @@ export default new Vuex.Store({
         },
         getDocument(state) {
             return state.documentActive
+        },
+        getPersonnel(state) {
+            return state.personnel
+        },
+        getPersonnelBlock(state) {
+            return state.personnelBlock
+        },
+        getButton(state) {
+            return state.button
+        },
+        getFooter(state) {
+            return state.footer
         }
     }
 })
