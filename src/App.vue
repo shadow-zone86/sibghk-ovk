@@ -138,12 +138,13 @@ export default {
 
   .logo {
     position: absolute;
-    left: 0.52%;
-    right: 16.2%;
-    top: 1.45%;
+    left: 15.5%;
+    right: -9.8%;
+    top: -74.6%;
     bottom: 0%;
-
-    background: url(./assets/logo.png);
+    background: url(/dist/logo2.png?545cd87d1081ebaa60c9db9dda5babe0);
+      background-size: auto;
+    background-size: 120px 70px;
   }
 
   .menu {
