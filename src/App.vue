@@ -131,7 +131,7 @@ export default {
     height: 31px;
     left: 0%;
     right: 90.7%;
-    top: calc(50% - 31px/2 + 2px);
+    top: calc(65% - 31px/2 + 2px);
 
     border-radius: 0px;
   }
@@ -142,8 +142,7 @@ export default {
     right: -9.8%;
     top: -74.6%;
     bottom: 0%;
-    background: url(/dist/logo2.png?545cd87d1081ebaa60c9db9dda5babe0);
-      background-size: auto;
+    background: url(./assets/logo2.png);
     background-size: 120px 70px;
   }
 

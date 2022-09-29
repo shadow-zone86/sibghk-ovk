@@ -30,7 +30,7 @@
         height: 35px;
         left: 1.67%;
         right: 82.43%;
-        top: 7px;
+        top: -4px;
 
         font-family: 'DM Sans';
         font-style: normal;
